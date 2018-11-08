@@ -4,15 +4,13 @@
   "description": "Eleks js-project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode production --open",
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open",
+    "build": "webpack --config ./webpack/webpack.config.js --mode production",
+    "dev": "webpack-dev-server --config ./webpack/webpack.config.js --mode development --open",
     "test": "jest",
     "lint": "eslint ./src",
     "lint:watch": "esw --watch",
     "stylelint": "stylelint './src/**/*.css'",
-    "precommit": "npm run lint && npm run stylelint",
-    "prepush": "npm run test"
+    "precommit": "npm run lint && npm run stylelint"
   },
   "browserslist": "> 0.25%, not dead",
   "author": "Denys Havryliv",

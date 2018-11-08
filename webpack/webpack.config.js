@@ -3,7 +3,7 @@ const path = require('path');
 const conf = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'main.js',
     publicPath: 'dist/'
   },
@@ -15,7 +15,10 @@ const conf = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: [/(node_modules)/, /\.spec\.js$/],
+        include: [
+          path.resolve(__dirname, '../js')
+        ]
       }
     ]
   }
