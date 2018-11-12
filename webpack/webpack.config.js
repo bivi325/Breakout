@@ -25,8 +25,17 @@ const conf = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+          {
+            loader: 'css-loader',
+            query: {
+              modules: false,
+              camelCase: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
         ]
       }
     ]
