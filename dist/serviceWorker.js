@@ -1,7 +1,7 @@
 const cacheName = 'cache1';
 const files = [
-  '/dist/main.css',
-  '/dist/main.js',
+  'main.css',
+  'main.js',
 ];
 
 self.addEventListener('install', event => {

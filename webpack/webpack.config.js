@@ -1,8 +1,9 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const conf = {
-  entry: ['./src/index.js', './src/styles/style.scss'],
+  entry: ['./src/index.js', './src/styles/style.scss', './src/img/favicon.ico'],
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: 'dist/',
@@ -37,6 +38,18 @@ const conf = {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/'
+            }
+          }
+        ]
       }
     ]
   },
@@ -44,6 +57,9 @@ const conf = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve('./index.html')
     })
   ]
 };
