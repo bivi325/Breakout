@@ -6,7 +6,6 @@ const conf = {
   entry: ['./src/index.js', './src/styles/style.scss', './src/img/favicon.ico'],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: 'dist/',
     filename: 'main.js'
   },
   devServer: {
