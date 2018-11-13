@@ -11,7 +11,7 @@ Breakout is an arcade game developed and published by Atari, released on May 13,
 
 # Stack
 * [JS]
-* [SaSS]
+* [scss]
 * [HTML]
 
 # Links
