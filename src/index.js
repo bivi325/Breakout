@@ -1,3 +1,11 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('../serviceWorker.js').then(function () {
+    return navigator.serviceWorker.ready;
+  }).then(function () {
+  }).catch(function () {
+  });
+}
+
 function resizeCanvasToDisplaySize (canvas) {
   // look up the size the canvas is being displayed
   const width = canvas.clientWidth;
@@ -225,5 +233,3 @@ function resetBall () {
 }
 
 newGameTextDraw();
-
-
