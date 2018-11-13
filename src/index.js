@@ -67,6 +67,7 @@ function initBriks () {
 document.addEventListener('mousedown', mouseDownHandler, false);
 document.addEventListener('mousemove', mouseMoveHandler, false);
 document.addEventListener('touchmove', touchMoveHandler, false);
+document.addEventListener('touchstart', touchStartHandler, false);
 
 function mouseDownHandler (e) {
   const relativeX = e.clientX - canvas.offsetLeft;
@@ -90,6 +91,17 @@ function touchMoveHandler (e) {
   const touch = e.touches[0];
   if (e.target === canvas) {
     const mouseEvent = new MouseEvent('mousemove', {
+      clientX: touch.clientX,
+      clientY: touch.clientY
+    });
+    canvas.dispatchEvent(mouseEvent);
+  }
+}
+
+function touchStartHandler (e) {
+  const touch = e.touches[0];
+  if (e.target === canvas) {
+    const mouseEvent = new MouseEvent('mousedown', {
       clientX: touch.clientX,
       clientY: touch.clientY
     });
