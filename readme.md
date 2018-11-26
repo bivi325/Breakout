@@ -6,6 +6,7 @@ Breakout is an arcade game developed and published by Atari, released on May 13,
 # Credentials
 * [Eleks University](https://www.facebook.com/eleksuniversity/ "Eleks")
 * [Vladimir Shevchuk](https://github.com/dosandk/ "JS teacher/advicer")
+* [Frontend stream](https://www.facebook.com/groups/270300106928894/ "FrontEnd Group FB")
 
 # Check our app at GitHub pages
 [Breackout](https://bivi325.github.io/Breakout/dist/);
